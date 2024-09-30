@@ -1,2 +1,4 @@
 ﻿l_english:
- can_recruit_character_to_court_trigger.tt.laamps_invitation_restrictions: "[adventurers|E] may only invite their [player_heir|E], [lover|E], [soulmate|E], [friend|E], [best_friend|E], or [spouses|E] to their [camp|E]"
+ adventurer_war_seize_controlled_lands_duchy: "You will gain all the controlled [counties|E] by you, that are inside the [duchy|E] that you are seizing."
+ adventurer_war_seize_controlled_lands_kingdom: "You will gain all the controlled [counties|E] by you, that are inside the [kingdom|E] that you are seizing."
+ adventurer_war_seize_controlled_lands_empire: "You will gain all the controlled [counties|E] by you, that are inside the [empire|E] that you are seizing."
