@@ -319,7 +319,7 @@
 					add_to_list = target_titles
 				}
 
-				# Ensure at least some land is taken
+				# Ensure that the target's capital county and counties within the target held directly by the defender are taken
 				if = {
 					limit = {
 						NOT = {
@@ -329,8 +329,22 @@
 							}
 						}
 					}
-					random_sub_realm_county = {
-						limit = { duchy = scope:target }
+					every_sub_realm_county = {
+						limit = {
+							OR = {
+								AND = {
+									duchy = scope:target
+									holder = scope:target.holder
+								}
+								scope:target.title_capital_county = this
+								AND = {
+									duchy = scope:target
+									holder = {
+										government_allows = administrative
+									}
+								}
+							}
+						}
 						add_to_list = target_titles
 					}
 				}
@@ -422,6 +436,9 @@
 
 		# FP1: note the victory for future memorialisation via stele (if applicable).
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
+
+		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
+		laamp_as_mercenary_payout_tooltip_effect = yes
 	}
 
 	on_white_peace_desc = {
@@ -468,6 +485,9 @@
 		}
 
 		add_truce_white_peace_effect = yes
+
+		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
+		laamp_as_mercenary_payout_tooltip_effect = yes
 	}
 
 	on_defeat_desc = {
@@ -529,6 +549,9 @@
 		}
 
 		on_lost_aggression_war_discontent_loss = yes
+
+		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
+		laamp_as_mercenary_payout_tooltip_effect = yes
 	}
 
 	transfer_behavior = transfer
@@ -895,8 +918,7 @@ ep3_laamp_adventurer_kingdom_invasion = {
 					}
 					add_to_list = target_titles
 				}
-
-				# Ensure at least some land is taken
+				# Ensure that the target's capital county and counties within the target held directly by the defender are taken
 				if = {
 					limit = {
 						NOT = {
@@ -906,8 +928,16 @@ ep3_laamp_adventurer_kingdom_invasion = {
 							}
 						}
 					}
-					random_sub_realm_county = {
-						limit = { kingdom = scope:target }
+					every_sub_realm_county = {
+						limit = {
+							OR = {
+								AND = {
+									kingdom = scope:target
+									holder = scope:target.holder
+								}
+								scope:target.title_capital_county = this
+							}
+						}
 						add_to_list = target_titles
 					}
 				}
@@ -999,6 +1029,9 @@ ep3_laamp_adventurer_kingdom_invasion = {
 
 		# FP1: note the victory for future memorialisation via stele (if applicable).
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
+
+		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
+		laamp_as_mercenary_payout_tooltip_effect = yes
 	}
 
 	on_white_peace_desc = {
@@ -1045,6 +1078,9 @@ ep3_laamp_adventurer_kingdom_invasion = {
 		}
 
 		add_truce_white_peace_effect = yes
+
+		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
+		laamp_as_mercenary_payout_tooltip_effect = yes
 	}
 
 	on_defeat_desc = {
@@ -1106,6 +1142,9 @@ ep3_laamp_adventurer_kingdom_invasion = {
 		}
 
 		on_lost_aggression_war_discontent_loss = yes
+
+		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
+		laamp_as_mercenary_payout_tooltip_effect = yes
 	}
 
 	transfer_behavior = transfer
@@ -1461,16 +1500,7 @@ ep3_laamp_adventurer_empire_invasion = {
 					limit = { empire ?= scope:target }
 					add_to_list = target_titles
 				}
-
-				every_sub_realm_county = {
-					limit = {
-						county_controller = scope:attacker
-						empire ?= scope:target
-					}
-					add_to_list = target_titles
-				}
-
-				# Ensure at least some land is taken
+				# Ensure that the target's capital county and counties within the target held directly by the defender are taken
 				if = {
 					limit = {
 						NOT = {
@@ -1480,8 +1510,23 @@ ep3_laamp_adventurer_empire_invasion = {
 							}
 						}
 					}
-					random_sub_realm_county = {
-						limit = { empire = scope:target }
+					every_sub_realm_county = {
+						limit = {
+							county_controller = scope:attacker
+							empire ?= scope:target
+						}
+						add_to_list = target_titles
+					}
+					every_sub_realm_county = {
+						limit = {
+							OR = {
+								AND = {
+									empire = scope:target
+									holder = scope:target.holder
+								}
+								scope:target.title_capital_county = this
+							}
+						}
 						add_to_list = target_titles
 					}
 				}
@@ -1573,6 +1618,9 @@ ep3_laamp_adventurer_empire_invasion = {
 
 		# FP1: note the victory for future memorialisation via stele (if applicable).
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
+
+		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
+		laamp_as_mercenary_payout_tooltip_effect = yes
 	}
 
 	on_white_peace_desc = {
@@ -1619,6 +1667,9 @@ ep3_laamp_adventurer_empire_invasion = {
 		}
 
 		add_truce_white_peace_effect = yes
+
+		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
+		laamp_as_mercenary_payout_tooltip_effect = yes
 	}
 
 	on_defeat_desc = {
@@ -1680,6 +1731,9 @@ ep3_laamp_adventurer_empire_invasion = {
 		}
 
 		on_lost_aggression_war_discontent_loss = yes
+
+		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
+		laamp_as_mercenary_payout_tooltip_effect = yes
 	}
 
 	transfer_behavior = transfer
