@@ -1,0 +1,4 @@
+﻿l_russian:
+ adventurer_war_seize_controlled_lands_duchy: "Вы получите все [counties|E], контролируемые вами, которые находятся внутри [duchy|E], который вы захватываете."
+ adventurer_war_seize_controlled_lands_kingdom: "Вы получите все [counties|E], контролируемые вами, которые находятся внутри [kingdom|E], который вы захватываете."
+ adventurer_war_seize_controlled_lands_empire: "Вы получите все [counties|E], контролируемые вами, которые находятся внутри [empire|E], который вы захватываете."

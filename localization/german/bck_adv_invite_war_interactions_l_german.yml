@@ -1,0 +1,4 @@
+﻿l_german:
+ adventurer_war_seize_controlled_lands_duchy: "Ihr erhaltet alle von euch kontrollierten [counties|E], die sich innerhalb des [duchy|E] befinden, das ihr erobert."
+ adventurer_war_seize_controlled_lands_kingdom: "Ihr erhaltet alle von euch kontrollierten [counties|E], die sich innerhalb des [kingdom|E] befinden, das ihr erobert."
+ adventurer_war_seize_controlled_lands_empire: "Ihr erhaltet alle von euch kontrollierten [counties|E], die sich innerhalb des [empire|E] befinden, das ihr erobert."

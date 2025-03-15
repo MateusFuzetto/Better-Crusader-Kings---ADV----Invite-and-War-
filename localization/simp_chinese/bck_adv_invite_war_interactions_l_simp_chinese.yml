@@ -1,0 +1,4 @@
+﻿l_simp_chinese:
+ adventurer_war_seize_controlled_lands_duchy: "你将获得所有由你控制的[counties|E]，这些[counties|E]位于你正在夺取的[duchy|E]之内。"
+ adventurer_war_seize_controlled_lands_kingdom: "你将获得所有由你控制的[counties|E]，这些[counties|E]位于你正在夺取的[kingdom|E]之内。"
+ adventurer_war_seize_controlled_lands_empire: "你将获得所有由你控制的[counties|E]，这些[counties|E]位于你正在夺取的[empire|E]之内。"
